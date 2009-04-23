@@ -18,14 +18,19 @@ class StoreController < ApplicationController
     redirect_to_index("Invalid product")
   end
   
-
-
-  
   def empty_cart
     session[:cart] = nil
     redirect_to_index
   end
   
+  def checkout
+    @cart = find_cart
+    if @cart.items.empty?
+      redirect_to_index("Your cart is empty. What the fuck are you trying to pull?")
+    else
+      @order = Order.new
+    end
+  end
 
 private
 

@@ -9,7 +9,6 @@
   </tr>
 
 </table>
-
-<%= button_to "Check The Fuck Out", :action => 'checkout' %>  
-<%= button_to "Empty The Damn Cart", :action => :empty_cart %>
+  
+<%= button_to "Empty cart", :action => :empty_cart %>
 <% end %>
