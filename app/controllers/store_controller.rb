@@ -31,6 +31,18 @@ class StoreController < ApplicationController
       @order = Order.new
     end
   end
+  
+  def save_order
+    @cart = find_cart
+    @order = Order.new(params[:order])
+    @order.add_line_items_from_cart(@cart)
+    If @order.save
+      session[:cart] = nil
+      redirect_to_index("Thanks for your order and Personal Information.  We will buy ourselves something nice.")
+    else
+        render :action => 'checkout'
+    end
+  end
 
 private
 
@@ -47,4 +59,3 @@ private
   end
 
 
-end
