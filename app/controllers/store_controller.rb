@@ -26,7 +26,7 @@ class StoreController < ApplicationController
   def checkout
     @cart = find_cart
     if @cart.items.empty?
-      redirect_to_index("Your cart is empty. What the fuck are you trying to pull?")
+      redirect_to_index("Your cart is empty  What the fuck are you trying to pull?")
     else
       @order = Order.new
     end
@@ -36,9 +36,9 @@ class StoreController < ApplicationController
     @cart = find_cart
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(@cart)
-    If @order.save
+    if @order.save
       session[:cart] = nil
-      redirect_to_index("Thanks for your order and Personal Information.  We will buy ourselves something nice.")
+      redirect_to_index("Thanks for your order and Personal Information  We will buy ourselves something nice.")
     else
         render :action => 'checkout'
     end
@@ -58,4 +58,4 @@ private
     session[:cart] ||= Cart.new
   end
 
-
+end
