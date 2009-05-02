@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 
+
   def self.down
     drop_table :users
   end

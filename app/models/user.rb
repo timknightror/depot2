@@ -31,10 +31,11 @@ class User < ActiveRecord::Base
   end
   
   
+  
 private
   
   def password_non_blank
-      errors.add(:password, "Missing password you idiot") if hashed_password.blank?
+      errors.add(:password, "Missing password you damn idiot") if hashed_password.blank?
   end
   
   def self.encrypted_password(password, salt)
