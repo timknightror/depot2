@@ -1,7 +1,9 @@
 .DS_Store
-log/*.log
+log/*.
+log
 tmp/**/*
+
 config/database.yml
 
-
 *.ini
+*/tmp*
