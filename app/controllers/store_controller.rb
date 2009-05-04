@@ -52,6 +52,8 @@ private
     redirect_to :action => 'index'
   end
   
+  def authorize
+  end
   
 
   def find_cart

@@ -8,27 +8,21 @@
 
 	<div>
 		<%= f.label :name %>:
-		<% f.text_field :name, :size => 40 %>
+		<%= f.text_field :name, :size => 40 %>
 	</div>
+	<div>
+		<%= f.label :user_password, 'Password' %>:
+		<%= f.password_field :password, :size => 40 %>
+	</div>
+	<div>
+		<%= f.label :user_password_confirmation, 'Confirm' %>:
+		<%= f.password_field :password_confirmation, :size => 40 %>
+	</div>
+	<div>
+		<%= f.submit "Add User" , :class => "submit" %>
+	</div>
+	</fieldset>
+	<% end %>
 	
-	
-  <% %>
-  
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
-  </p>
-  <p>
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
 
 <%= link_to 'Back', users_path %>
