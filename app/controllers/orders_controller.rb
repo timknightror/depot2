@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
+  
+  active_scaffold :order
+
+  
   def index
     @orders = Order.find(:all)
 
